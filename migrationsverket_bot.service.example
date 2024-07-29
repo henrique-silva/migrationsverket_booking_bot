@@ -1,0 +1,12 @@
+[Unit]
+Description=Migrationsverket booking telegram bot
+After=multi-user.target
+
+[Service]
+Type=simple
+WorkingDirectory={{DIRECTORY}}
+ExecStart=./telegram-bot-env/bin/python3 notification_bot.py bot.token
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
